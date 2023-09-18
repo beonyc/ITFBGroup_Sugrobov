@@ -44,4 +44,5 @@
 30.	Проверить, что появился текст You entered Test name
 
 
+![image](https://github.com/beonyc/ITFBGroup_Sugrobov/assets/102924206/fb0dc3e7-155b-41d9-9eb0-366319ce6b0b)
 
