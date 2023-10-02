@@ -40,8 +40,10 @@ public class FullTest {
         alertsPage = new AlertsFrameWindowsPage(driver);
         alBrowWin = new AlertsFrameWindowsPage_BrowserWindows(driver);
         alAlert = new AlertsFrameWindowsPage_Alerts(driver);
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
         driver.get(dataBase.BASE_URL);
     }
 
@@ -49,7 +51,6 @@ public class FullTest {
     @DisplayName("Проверка по всему сценарию")
     @Description("Здесь описан полный путь сценария, который был дан в задании")
     public void fullPathTest() {
-
         //2.	Нажать на «Elements»
         mainPage.clickToElementsBlock();
         //3.	Нажать на «Text box»
@@ -121,3 +122,4 @@ public class FullTest {
     }
 
 }
+//какойто комммент, который потом удалю

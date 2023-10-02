@@ -34,7 +34,6 @@ public class AlertsFrameWindowsPage_Alerts {
         Alert alert = driver.switchTo().alert();
         alert.sendKeys(message);
         alert.accept();
-
     }
 
     @Step("Получение текста, который появился после закрытия prompt alert ")
@@ -67,7 +66,6 @@ public class AlertsFrameWindowsPage_Alerts {
     public void closeAlert() {
         Alert alert = driver.switchTo().alert();
         alert.accept();
-
     }
 
     @Step("Нажатие на кнопку Click me для обычного alert с таймером")
@@ -77,10 +75,11 @@ public class AlertsFrameWindowsPage_Alerts {
 
     @Step("Закрыть уведомление Alert с таймером")
     public void closeAlertWithTimer() {
+        //подождать пока алерт появистя
         new WebDriverWait(driver, Duration.ofSeconds(6))
                 .until(ExpectedConditions.alertIsPresent());
         Alert alert = driver.switchTo().alert();
+        // alert.sendKeys("что введется в prompt");
         alert.accept();
-
     }
 }
