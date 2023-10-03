@@ -1,9 +1,8 @@
-package org.example;
+package org.example.steps;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 public class AlertsFrameWindowsPage {
     private WebDriver driver;
 
@@ -11,12 +10,13 @@ public class AlertsFrameWindowsPage {
         this.driver = driver;
     }
 
-    private By browserWindows = By.xpath("//span[text()='Browser Windows']");
+    private By browserWindows = By.xpath("//div[@class='element-group'][3]//li[1]");
     private By alerts = By.xpath("//span[text()='Alerts']");
 
     @Step("Нажатие на Browser Windows")
     public void clickToBrowserWindows() {
-        driver.findElement(browserWindows).click();
+        if (!(driver.findElement(browserWindows).getCssValue("class").contains("active")))
+            driver.findElement(browserWindows).click();
     }
 
     @Step("Нажатие на Alerts")

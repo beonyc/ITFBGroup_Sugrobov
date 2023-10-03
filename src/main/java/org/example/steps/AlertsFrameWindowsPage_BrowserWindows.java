@@ -1,4 +1,4 @@
-package org.example;
+package org.example.steps;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -18,7 +18,6 @@ public class AlertsFrameWindowsPage_BrowserWindows {
     public void clickToNewTabButton() {
         driver.findElement(newTabButton).click();
     }
-
     @Step("Закрытие новой вкладки")
     public void closeNewTab() {
         String[] windows = driver.getWindowHandles().toArray(new String[0]);

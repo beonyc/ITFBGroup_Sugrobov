@@ -1,4 +1,4 @@
-package org.example;
+package org.example.steps;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.Alert;
@@ -75,7 +75,7 @@ public class AlertsFrameWindowsPage_Alerts {
 
     @Step("Закрыть уведомление Alert с таймером")
     public void closeAlertWithTimer() {
-        //подождать пока алерт появистя
+        //подождать пока алерт появится
         new WebDriverWait(driver, Duration.ofSeconds(6))
                 .until(ExpectedConditions.alertIsPresent());
         Alert alert = driver.switchTo().alert();

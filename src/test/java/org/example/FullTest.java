@@ -3,7 +3,8 @@ package org.example;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import org.example.Config.DataBase;
+import org.example.config.DataBase;
+import org.example.steps.*;
 import org.hamcrest.MatcherAssert;
 import org.junit.After;
 import org.junit.Assert;
@@ -43,7 +44,6 @@ public class FullTest {
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
         driver.get(dataBase.BASE_URL);
     }
 
@@ -120,6 +120,4 @@ public class FullTest {
     public void tearDown() {
         driver.quit();
     }
-
 }
-//какойто комммент, который потом удалю
