@@ -1,4 +1,4 @@
-package org.example;
+package org.example.steps;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -13,7 +13,6 @@ public class MainPage {
     public MainPage(WebDriver driver) {
         this.driver = driver;
     }
-
     @Step("Нажатие на блок Elements")
     public void clickToElementsBlock() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(elementsBlock));

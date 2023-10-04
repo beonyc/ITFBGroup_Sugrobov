@@ -1,4 +1,4 @@
-package org.example;
+package org.example.steps;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -14,7 +14,6 @@ public class ElementsPage {
     public ElementsPage(WebDriver driver) {
         this.driver = driver;
     }
-
     @Step("Нажатие на блок TextBox")
     public void clickToTextBox() {
         driver.findElement(textBoxSection).click();

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>ITFBGroup_Task1-Sugrobov</artifactId>
+    <artifactId>CucumberProject</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -16,11 +16,36 @@
         <allure.version>2.23.0</allure.version>
     </properties>
     <dependencies>
-
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit4</artifactId>
-            <version>${allure.version}</version>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>2.21.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>26.2.0</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.cucumber</groupId>-->
+<!--            <artifactId>cucumber-core</artifactId>-->
+<!--            <version>7.14.0</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.14.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.12.1</version>
         </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -28,14 +53,11 @@
             <version>5.5.3</version>
         </dependency>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>4.12.1</version>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>${allure.version}</version>
         </dependency>
-
-
     </dependencies>
-
     <build>
         <plugins>
             <plugin>

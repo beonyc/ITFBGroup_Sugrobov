@@ -1,4 +1,4 @@
-package org.example.Config;
+package org.example.config;
 
 public class DataBase {
     public final String NAME="name";

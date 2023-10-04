@@ -3,12 +3,10 @@ package org.example;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import org.example.Config.DataBase;
+import org.example.config.DataBase;
+import org.example.steps.*;
 import org.hamcrest.MatcherAssert;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -17,7 +15,7 @@ import java.time.Duration;
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.containsString;
 
-@DisplayName("Полностью весь сценарий в одном тесте")
+@DisplayName("Полностью весь сценарий без cucumber")
 public class FullTest {
     private WebDriver driver;
     private MainPage mainPage;
@@ -40,6 +38,7 @@ public class FullTest {
         alertsPage = new AlertsFrameWindowsPage(driver);
         alBrowWin = new AlertsFrameWindowsPage_BrowserWindows(driver);
         alAlert = new AlertsFrameWindowsPage_Alerts(driver);
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get(dataBase.BASE_URL);
@@ -49,7 +48,6 @@ public class FullTest {
     @DisplayName("Проверка по всему сценарию")
     @Description("Здесь описан полный путь сценария, который был дан в задании")
     public void fullPathTest() {
-
         //2.	Нажать на «Elements»
         mainPage.clickToElementsBlock();
         //3.	Нажать на «Text box»
@@ -70,15 +68,18 @@ public class FullTest {
         //8.	Нажать на кнопку «Click me»
         elButtons.clickToDynamicButton();
         //9.	Проверить, что появился текст «You have done a dynamic click»
-        Assert.assertEquals("You have done a dynamic click", elButtons.getDynamicClickMessage());
+        Assert.assertEquals("Проверить, что появился текст «You have done a dynamic click»",
+                "You have done a dynamic click", elButtons.getDynamicClickMessage());
         //10.	Нажать на кнопку «Right Click me»
         elButtons.clickToRightClickButton();
         //11.	Проверить, что появился текст «You have done a right click»
-        Assert.assertEquals("You have done a right click", elButtons.getRightClickMessage());
+        Assert.assertEquals("Проверить, что появился текст «You have done a right click»",
+                "You have done a right click", elButtons.getRightClickMessage());
         //12.	Нажать на кнопку «Double Click me»
         elButtons.clickToDoubleClickButton();
         //13.	Проверить, что появился текст «You have done a double click»
-        Assert.assertEquals("You have done a double click", elButtons.getDoubleClickMessage());
+        Assert.assertEquals("Проверить, что появился текст «You have done a double click»",
+                "You have done a double click", elButtons.getDoubleClickMessage());
         //14.	Нажать на «Alerts, Frame & Windows»
         mainPage.clickToAlertsFrameWindowsBlock();
         //15.	Нажать на «Browser Windows»
@@ -106,18 +107,19 @@ public class FullTest {
         //26.	Нажать на кнопку «Да» в уведомление
         alAlert.pressOkInConfirmAlert();
         //27.	Проверить, что появился текст You selected Ok
-        Assert.assertTrue(alAlert.getTextAfterConfirmAlertIsClosed().contains("You selected Ok"));
+        Assert.assertTrue("Проверить, что появился текст You selected Ok",
+                alAlert.getTextAfterConfirmAlertIsClosed().contains("You selected Ok"));
         //28.	Нажать на кнопку «Click me»  рядом с On button click, prompt box will appear
         alAlert.clickPromptButton();
         //29.	Заполнить поле в уведомление данными: Test name
         alAlert.setDataToPromptInput(dataBase.MESSAGE);
         //30.	Проверить, что появился текст You entered Test name
-        Assert.assertTrue(alAlert.getTextAfterPromptAlertIsClosed().contains(String.format("You entered %s", dataBase.MESSAGE)));
+        Assert.assertTrue("Проверить, что появился текст You entered Test name",
+                alAlert.getTextAfterPromptAlertIsClosed().contains(String.format("You entered %s", dataBase.MESSAGE)));
     }
 
     @After
     public void tearDown() {
         driver.quit();
     }
-
 }
