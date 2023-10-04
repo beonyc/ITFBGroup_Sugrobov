@@ -1,33 +1,36 @@
-Feature: : полное тестовое задание
+# language: ru
+Функция: Полностью весь сценарий с cucumber
 
-  Scenario: Выполнение всех степов тестового задания
-    Given 1.Перейти на "https://demoqa.com/"
-    When 2.Нажать на «Elements»
-    And 3.Нажать на «Text box»
-    And 4.Заполнить поля: Full Name, Email, Current Address, Permanent Address
-    And 5.Нажать на кнопку «Submit»
-    Then 6.Проверить, что данные в блоке сохранены корректно
-    When 7.Нажать на «Buttons»
-    And 8.Нажать на кнопку «Click me»
-    Then 9.Проверить, что появился текст "You have done a dynamic click"
-    When 10.Нажать на кнопку «Right Click me»
-    Then 11.Проверить, что появился текст "You have done a right click"
-    When 12.Нажать на кнопку «Double Click me»
-    Then 13.Проверить, что появился текст "You have done a double click"
-    When 14.Нажать на «Alerts, Frame & Windows»
-    And 15.Нажать на «Browser Windows»
-    And 16.Нажать на кнопку «New Tab»
-    Then 17.Закрыть новую вкладку
-    When 18.Нажать на кнопку «New window»
-    Then 19.Закрыть новое окно
-    When 20.Нажать на «Alerts»
-    And 21.Нажать на кнопку «Click me» рядом с Click Button to see alert
-    Then 22.Закрыть уведомление
-    When 23.Нажать на кнопку «Click me» рядом с On button click, alert will appear after 5 seconds
-    Then 24.Закрыть уведомление
-    When 25.Нажать на кнопку «Click me» рядом с On button click, confirm box will appear
-    And  26.Нажать на кнопку «Да» в уведомление
-    Then 27.Проверить, что появился текст "You selected Ok"
-    When 28.Нажать на кнопку «Click me» рядом с On button click, prompt box will appear
-    And 29.Заполнить поле в уведомление данными: "Test name"
-    Then 30.Проверить, что появился текст "You entered Test name"
+  @allStepsScenario
+  Сценарий: Выполнение всех степов тестового задания с помощью cucumber
+    Дано Перейти на "https://demoqa.com/"
+    Когда Нажать на «Elements»
+    И Нажать на «Text box»
+    И Заполнить поля: Full Name, Email, Current Address, Permanent Address
+    И Нажать на кнопку «Submit»
+    Тогда Проверить, что данные в блоке сохранены корректно
+    Когда Нажать на «Buttons»
+    И Нажать на кнопку «Click me»
+    Тогда Проверить, что появился текст1 "You have done a dynamic click"
+    Когда Нажать на кнопку «Right Click me»
+    Тогда Проверить, что появился текст2 "You have done a right click"
+    Когда Нажать на кнопку «Double Click me»
+    Тогда Проверить, что появился текст3 "You have done a double click"
+    Когда Нажать на «Alerts, Frame & Windows»
+    И Нажать на «Browser Windows»
+    И Нажать на кнопку «New Tab»
+    Тогда Закрыть новую вкладку
+    Когда Нажать на кнопку «New window»
+    Тогда Закрыть новое окно
+    Когда Нажать на «Alerts»
+    И Нажать на кнопку «Click me» рядом с Click Button to see alert
+    Тогда Закрыть уведомление
+    Когда Нажать на кнопку «Click me» рядом с On button click, alert will appear after 5 seconds
+    Тогда Закрыть уведомление с таймером
+    Когда Нажать на кнопку «Click me» рядом с On button click, confirm box will appear
+    И  Нажать на кнопку «Да» в уведомление
+    Тогда Проверить, что появился текст4 "You selected Ok"
+    Когда Нажать на кнопку «Click me» рядом с On button click, prompt box will appear
+    И Заполнить поле в уведомление данными: "Test name"
+    Тогда Проверить, что появился текст "You entered Test name"
+
